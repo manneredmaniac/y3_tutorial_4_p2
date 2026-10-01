@@ -6,20 +6,19 @@ const App = () => {
   ]) 
   const [newName, setNewName] = useState('')
 
-  const addName = (event) => {
-    event.preventDefault()
-    console.log('button clicked', event.target)
-  }
-
   return (
     <div>
       <h2>Phonebook</h2>
-      <form onSubmit={addName}>
+      <form>
         
         <div>
           name: <input />
         </div>
         
+        <div>
+          number: <input />
+        </div>
+
         <div>
           <button type="submit">add</button>
         </div>
