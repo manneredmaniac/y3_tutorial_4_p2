@@ -6,10 +6,16 @@ const App = () => {
   ]) 
   const [newName, setNewName] = useState('')
 
-  // event handler for handling clicks
+  // event handler for handling clicks to submit
   const addName = (event) => {
     event.preventDefault()
     console.log('Button clicked', event.target)
+  }
+
+  // event handler 
+  const handleNameChange = (event) => {
+    console.log(event.target.value)
+    setNewName(event.target.value)
   }
 
   return (
