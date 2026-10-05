@@ -6,13 +6,19 @@ const App = () => {
   ]) 
   const [newName, setNewName] = useState('')
 
-  // event handler for handling clicks to submit
+  // event handler for handling clicks to submit to create a new note
   const addName = (event) => {
     event.preventDefault()
-    console.log('Button clicked', event.target)
+    // create object that receives state from newName
+    const nameObject = {
+      name: newName
+    }
+    setPersons(persons.concat(nameObject))
+    // reset the value of the controlled input
+    setNewName('')
   }
 
-  // event handler 
+  // event handler which deals with form inputs
   const handleNameChange = (event) => {
     console.log(event.target.value)
     setNewName(event.target.value)
@@ -24,7 +30,8 @@ const App = () => {
       <form onSubmit={addName}>
         
         <div>
-          name: <input />
+          name: <input value={newName}
+                        onChange={handleNameChange} />
         </div>
         
         <div>
