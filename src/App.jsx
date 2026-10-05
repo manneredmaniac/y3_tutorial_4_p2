@@ -6,10 +6,16 @@ const App = () => {
   ]) 
   const [newName, setNewName] = useState('')
 
+  // event handler for handling clicks
+  const addName = (event) => {
+    event.preventDefault()
+    console.log('Button clicked', event.target)
+  }
+
   return (
     <div>
       <h2>Phonebook</h2>
-      <form>
+      <form onSubmit={addName}>
         
         <div>
           name: <input />
